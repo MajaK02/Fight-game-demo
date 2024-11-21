@@ -50,12 +50,16 @@ function fight(hero, villain) {
         console.log(`${villain.name} attacked with ${villainAttack[0]} for ${villainAttack[1]} damage!`);
        hero.health-=villainAttack[1];
 
-       if(hero.health <)
+       if(hero.health < 0) {
+        hero.isAlive = false;
+        console.log(`${hero.name} has been defeated!`);
+       }
 
-
-
-    
-
+       if(villain.health < 0) {
+        villain.isAlive = false;
+        console.log(`${villain.name} has been defeated!`);
+       }
+    }
 }
 
 fight(hero, villain);
